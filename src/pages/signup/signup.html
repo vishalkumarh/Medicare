@@ -1,0 +1,97 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <ion-title style="text-align:left">Signup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="signup">
+  <h1>MediCare</h1>
+
+  <form novalidate (ngSubmit)="onSubmit(user.value)" [formGroup]="user">
+    <ion-item style="background-color: transparent;">
+      <ion-label floating>User Name*</ion-label>
+      <ion-input type="text" value="" formControlName="username"></ion-input>
+    </ion-item>
+
+    <div class="error" *ngIf="user.get('username').hasError('required') && user.get('username').touched">
+      <font color="red">Name is required</font>
+    </div>
+
+    <ion-item style="background-color: transparent;">
+      <ion-label floating>Email*</ion-label>
+      <ion-input type="text" value="" name="email" [(ngModel)]="email" formControlName="email"></ion-input>
+    </ion-item>
+
+    <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched">
+      <font color="red">Email is required</font>
+    </div>
+    <div class="error" *ngIf="user.get('email').hasError('email') && user.get('email').touched">
+      <font color="red"> please enter valid email</font>
+    </div>
+    <br>
+    <br>
+
+    <ion-item style="background-color: transparent;">
+      <ion-label>Gender*</ion-label>
+      <ion-select formControlName="gender">
+        <ion-option value="male">Male</ion-option>
+        <ion-option value="female">Female</ion-option>
+      </ion-select>
+    </ion-item>
+    <div class="error" *ngIf="user.get('gender').hasError('required') && user.get('gender').touched">
+      <font color="red">Gender is required</font>
+    </div>
+
+    <ion-item style="background-color: transparent;">
+      <ion-label floating>Password*</ion-label>
+      <ion-input type="password" value=""  name="password" [(ngModel)]="password" formControlName="password"></ion-input>
+    </ion-item>
+    <div class="error" *ngIf="user.get('password').hasError('required') && user.get('password').touched">
+      <font color="red">Password is required</font>
+    </div>
+    <div class="error" *ngIf="user.get('password').hasError('minlength') && user.get('password').touched">
+      <font color="red"> Minimum of 8 characters</font>
+    </div>
+
+
+    <ion-item style="background-color: transparent;">
+      <ion-label floating>Confirm Password*</ion-label>
+      <ion-input type="password" value="" formControlName="re_password"></ion-input>
+    </ion-item>
+
+    <div class="error" *ngIf="user.get('re_password').hasError('required') && user.get('re_password').touched">
+      <font color="red">Confirm password is required</font>
+    </div>
+    <div class="error" *ngIf="user.get('re_password').hasError('equalTo') && user.get('re_password').touched">
+      <font color="red">Password Mismatch</font>
+    </div>
+    <br>
+    <br>
+    <ion-item style="background-color: transparent;">
+      <ion-label> Date Of Birth *</ion-label>
+      <ion-datetime required name="birthdate" displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="dob" [ngModelOptions]="{standalone:true}"></ion-datetime>
+    </ion-item>
+
+    <ion-item style="background-color: transparent;">
+      <ion-label floating>Mobile No*</ion-label>
+      <ion-input type="tel" value="" formControlName="mobileno"></ion-input>
+    </ion-item>
+
+    <div class="error" *ngIf="user.get('mobileno').hasError('required') && user.get('mobileno').touched">
+      <font color="red">Mobile no is required</font>
+    </div>
+    <div class="error" *ngIf="user.get('mobileno').hasError('minlength') && user.get('mobileno').touched">
+      <font color="red"> Minimum of 10 characters</font>
+    </div>
+    <div class="error" *ngIf="user.get('mobileno').hasError('maxlength') && user.get('mobileno').touched">
+      <font color="red"> maximum of 10 characters</font>
+    </div>
+  </form>
+
+  <button ion-button block color="primary" type="submit" (click)="signup();login()" [disabled]="user.invalid" style="margin-top: 20px;">Signup</button>
+
+</ion-content>

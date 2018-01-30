@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-content #MultiItemsScrollingTabs class="tabsContent">
+      <ion-segment class="SwipedTabs-tabs">
+        <ion-segment-button *ngFor='let tab of tabs ; let i = index ' id="tabTitle{{i}}" value="IngoreMe" (click)="selectTab(i)"
+          [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }'>
+          {{tab}}
+        </ion-segment-button>
+      </ion-segment>
+      <!-- here is our dynamic line  "indicator"-->
+      <div id='indicator' class="SwipedTabs-indicatorSegment"></div>
+    </ion-content>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides #SwipedTabsSlider (ionSlideDrag)="animateIndicator($event)" (ionSlideDidChange)="updateIndicatorPosition()" (ionSlideWillChange)="scrollIndicatiorTab()"
+    (panend)="updateIndicatorPositionOnTouchEnd()" [pager]="false">
+    <ion-slide style="overflow-y: scroll;height: 100%;align-items: flex-start !important;">
+      <ion-slides autoplay="2000" loop="true" speed="3000">
+        <ion-slide *ngFor="let slide of slideData">
+          <img src="{{slide.image}}" />
+        </ion-slide>
+      </ion-slides>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-3>
+              <button ion-button large clear icon-center color="primary">
+                <ion-icon name="person-add" style="font-size:2em" color="primary"></ion-icon>
+              </button>
+              <h6 class="italic">Admin Login</h6>
+            </ion-col>
+            <ion-col col-3 offset-1>
+              <button ion-button large clear icon-center color="primary">
+                <ion-icon name="person-add" style="font-size:2em" color="primary"></ion-icon>
+              </button>
+              <h6 class="italic">Patient Login</h6>
+            </ion-col>
+            <ion-col col-3 offset-1>
+              <button ion-button large clear icon-center color="primary">
+                <ion-icon name="person-add" style="font-size:2em" color="primary"></ion-icon>
+              </button>
+              <h6 class="italic">Doctor Login</h6>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <br>
+      <br>
+      <div>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-3>
+              <button ion-button large clear icon-center color="primary">
+                <ion-icon name="people" style="font-size:2em" color="primary"></ion-icon>
+              </button>
+              <h6 class="italic">New Patient</h6>
+            </ion-col>
+            <ion-col col-3 offset-1>
+              <button ion-button large clear icon-center color="primary">
+                <ion-icon name="ionic" style="font-size:2em" color="primary"></ion-icon>
+              </button>
+              <h6 class="italic">About App</h6>
+            </ion-col>
+            <ion-col col-3 offset-1>
+              <button ion-button large clear icon-center color="primary">
+                <ion-icon name="paper" style="font-size:2em" color="primary"></ion-icon>
+              </button>
+              <h6 class="italic">Feed back</h6>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div #map id="map"></div>
+      <h1>Page 1 </h1>
+    </ion-slide>
+    <ion-slide>
+      <h1>Page 2 </h1>
+    </ion-slide>
+    <ion-slide>
+      <h1>Page 3 </h1>
+    </ion-slide>
+    <ion-slide>
+      <h1>Page 4 </h1>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>

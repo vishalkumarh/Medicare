@@ -1,0 +1,81 @@
+page-home {
+    .SwipedTabs-indicatorSegment
+    {
+        -webkit-transition: 0.2s all;
+        -moz-transition:  0.2s all;
+        -o-transition:  0.2s all;
+        transition:  0.2s all;
+        transform-origin: top 0 left 0;
+        height: 1px;
+      position: relative;
+      top: -2px;
+      background-color: #488aff !important;
+    }
+
+    .SwipedTabs-tabs ion-segment-button
+    {
+      border:none !important;
+      color:rgb(16, 17, 16)!important;
+      background-color:white!important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+     .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab
+    {
+        color:#488aff!important;
+    }
+
+    .SwipedTabs-tabs
+    {
+        width: fit-content !important;
+    }
+
+     .toolbar *
+    {
+        margin: 0 !important;
+    }
+
+    .tabsContent .scroll-content
+    {
+        overflow-x: scroll !important;
+    }
+
+    .tabsContent
+    {
+        height: 50px !important;
+    }
+
+    .segment-button
+    {
+        max-width: initial !important;
+        flex: auto !important;
+        width: initial !important;
+    }
+}
+.ios{
+    page-home {
+        .SwipedTabs-indicatorSegment
+        {
+            position: relative;
+            top: 44px !important;
+        }
+
+    }
+    h6.italic {
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+    }
+    #sidenav {
+        ion-item[submenu-item] {
+          padding-left: 25px; // maybe margin-left would work better to move the border as well
+          color: #ccc;
+        }
+       }
+     
+       #map {
+        height: 100%;
+      }
+    
+}

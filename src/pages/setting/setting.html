@@ -1,0 +1,41 @@
+<ion-header>
+  
+    <ion-navbar color="primary">
+      <ion-title>setting</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <ion-item >
+          <ion-icon item-start name="ios-bookmark"  class="custom-icon"></ion-icon>
+        Bookmark
+      </ion-item>
+    <ion-item >
+        <ion-icon item-start name="md-star-outline"  class="custom-icon"></ion-icon>
+      Rate us on app
+    </ion-item>
+    <ion-item (click)="showAlert()" menuClose>
+        <ion-icon item-start name="share-alt"  class="custom-icon"></ion-icon>
+       Share this App
+    </ion-item>
+    <ion-item>
+        <ion-icon item-start name="ios-information-circle"  class="custom-icon"></ion-icon>
+       About us
+      
+    </ion-item>
+    <ion-item>
+        <ion-icon item-start name="md-lock"  class="custom-icon"></ion-icon>
+       Privacy policy
+    </ion-item>
+    <ion-item>
+        <ion-icon item-start name="ios-paper"  class="custom-icon"></ion-icon>
+       Terms of use
+    </ion-item>
+    <ion-item>
+        <ion-icon item-start name="ios-notifications"  class="custom-icon"></ion-icon>
+        <ion-label>Notification</ion-label>
+         <ion-toggle [(ngModel)]="pepperoni"></ion-toggle>
+       </ion-item>
+  </ion-content>

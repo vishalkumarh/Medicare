@@ -1,0 +1,44 @@
+<ion-menu side="left" [content]="content">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+        
+    </ion-header>
+
+    <ion-content>
+
+        <ion-item (click)="go_to_home()" menuClose>
+            <ion-icon item-start name="md-home" class="custom-icon"></ion-icon>
+            Home
+        </ion-item>
+        <ion-item (click)="go_to_profile()" menuClose>
+            <ion-icon item-start name="ios-contact" class="custom-icon"></ion-icon>
+            profile
+        </ion-item>
+        <ion-item>
+            <ion-icon item-start name="logo-buffer" class="custom-icon"></ion-icon>
+            Category
+        </ion-item>
+        <ion-item>
+                <ion-icon item-start name="globe" class="custom-icon"></ion-icon>
+         Country
+        </ion-item>
+        <ion-item>
+            <ion-icon item-start name="md-home" class="custom-icon"></ion-icon>
+            State
+        </ion-item>
+
+        <ion-item (click)="go_to_setting()" menuClose>
+            <ion-icon item-start name="md-settings" class="custom-icon"></ion-icon>
+            Settings
+        </ion-item>
+        <ion-item (click)="go_to_logout()" menuClose>
+            <ion-icon item-start name="md-exit" class="custom-icon"></ion-icon>
+            Logout
+        </ion-item>
+
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Profile
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item style="text-align:center;">
+
+    <div class="card">
+      <img src="../assets/imgs/logo.png" alt="John" style="width:50%">
+      <h1>John Doe</h1>
+      <p class="title">CEO & Founder, Example</p>
+      <p>Harvard University</p>
+      <div style="margin: 24px 0;">
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-twitter"></ion-icon>
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </div>
+      <button ion-button color="secondary">Contact</button>
+    </div>
+  </ion-item>
+
+  <br>
+  <br>
+  <br>
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Push notification</ion-label>
+      <ion-toggle [(ngModel)]="pepperoni"></ion-toggle>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button block color="primary" (click)="logout()" style="margin-top: 20px;">LogOut</button>
+</ion-content>

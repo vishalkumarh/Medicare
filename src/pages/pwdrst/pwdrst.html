@@ -1,0 +1,17 @@
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Password Reset
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list >
+        <ion-item>
+            <ion-input type="email" [(ngModel)]="email" placeholder="Email"></ion-input>
+        </ion-item>
+        <button ion-button block round outline color="primary" (click)="reset()">Reset my Password</button>
+        <button ion-button full clear color="primary" (click)="goback()">Go Back</button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
